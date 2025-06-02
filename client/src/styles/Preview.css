@@ -5,7 +5,7 @@
 
 .preview-button {
   padding: 0.9rem 2.5rem;
-  background-color: #7f8c8d; /* soft slate gray */
+  background-color: #7f8c8d;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -22,64 +22,74 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Normal hover effect */
 .preview-button:hover:not(:disabled) {
   background-color: #626d70;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(98, 109, 112, 0.5);
 }
 
-.preview-button:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(127, 140, 141, 0.4);
-}
-
-/* Disabled state with cursor and no effects */
 .preview-button:disabled {
   background-color: #c7ccd1;
   color: #f0f3f7;
   cursor: not-allowed;
   box-shadow: none;
-  transform: none;
 }
 
-.preview-button:disabled:hover,
-.preview-button:disabled:active {
-  background-color: #c7ccd1;
-  box-shadow: none;
-  transform: none;
-}
-
-.preview-content {
-  margin-top: 1rem;
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  min-height: 200px;
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #eee;
+  z-index: 999;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
-.preview-content p {
-  color: #7f8c8d;
-  text-align: center;
-  font-size: 0.9rem;
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 700px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
 }
 
 .preview-iframe {
-  width: 100%;
-  height: 400px;
+  flex-grow: 1;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #f9f9f9;
 }
 
-@media (max-width: 768px) {
-  .preview-container {
-    max-width: 100%;
-    margin-top: 1rem;
-  }
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

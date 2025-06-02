@@ -2,25 +2,30 @@ import React, { useState } from 'react';
 import '../styles/Preview.css';
 
 const Preview = ({ mergedPdfUrl }) => {
-  const [showPreview, setShowPreview] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => setShowModal(false);
 
   return (
     <div className="preview-container">
       <button 
         className="preview-button" 
-        onClick={() => setShowPreview(!showPreview)}
+        onClick={() => setShowModal(true)}
         disabled={!mergedPdfUrl}
       >
-        {showPreview ? 'Hide Preview' : 'Show Preview'}
+        Show Preview
       </button>
-      
-      {showPreview && mergedPdfUrl && (
-        <div className="preview-content">
-          <iframe 
-            src={mergedPdfUrl} 
-            className="preview-iframe"
-            title="PDF Preview"
-          />
+
+      {showModal && mergedPdfUrl && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeModal}>×</button>
+            <iframe 
+              src={mergedPdfUrl}
+              className="preview-iframe"
+              title="PDF Preview"
+            />
+          </div>
         </div>
       )}
     </div>
