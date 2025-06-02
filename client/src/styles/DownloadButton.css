@@ -1,6 +1,6 @@
 .download-button {
   padding: 0.9rem 2.5rem;
-  background-color: #3498db; /* soft blue */
+  background-color: #3498db;
   color: white;
   border: none;
   border-radius: 8px;
@@ -36,5 +36,3 @@
   box-shadow: none;
   transform: none;
 }
-
-/* Removed arrow indicator */

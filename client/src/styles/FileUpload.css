@@ -25,11 +25,6 @@
   box-shadow: 0 6px 25px rgba(52, 152, 219, 0.2);
 }
 
-/* Remove the dynamic size changes */
-.file-upload.has-files {
-  /* No height or padding change */
-}
-
 .file-upload input[type="file"] {
   display: none;
 }

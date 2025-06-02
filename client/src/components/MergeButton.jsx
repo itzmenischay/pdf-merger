@@ -16,8 +16,6 @@ const MergeButton = ({ files, onMergeComplete, onMergeError }) => {
     try {
       const formData = new FormData();
 
-      // console.log('Preparing to send files:', files);
-      
       // Ensure files are File objects (sometimes drag-drop or other sources may give weird objects)
       files.forEach((file, index) => {
         if (file instanceof File) {

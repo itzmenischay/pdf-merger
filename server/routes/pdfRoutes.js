@@ -4,20 +4,16 @@ import PDF from '../models/Pdf.js';
 const router = express.Router();
 
 /**
- * @route POST /api/pdf
- * @desc Save metadata about a merged PDF
- * @access Public (consider adding auth if needed)
+ * Save metadata about a merged PDF
  */
 router.post('/', async (req, res) => {
   try {
-    // Validate request body
     const { filename, size, pages, mergedFrom } = req.body;
 
     if (!filename || !size || !pages || !mergedFrom) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Create new PDF record
     const pdfRecord = new PDF({
       filename,
       size,
@@ -56,18 +52,14 @@ router.post('/', async (req, res) => {
 });
 
 /**
- * @route GET /api/pdf
- * @desc Get paginated list of merged PDFs
- * @access Public
+ * Get paginated list of merged PDFs
  */
 router.get('/', async (req, res) => {
   try {
-    // Pagination parameters
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    // Query and count in parallel
     const [pdfs, total] = await Promise.all([
       PDF.find()
         .sort({ mergeDate: -1 })
@@ -102,9 +94,7 @@ router.get('/', async (req, res) => {
 });
 
 /**
- * @route GET /api/pdf/:id
- * @desc Get single PDF record
- * @access Public
+ * Get single PDF record by ID
  */
 router.get('/:id', async (req, res) => {
   try {
