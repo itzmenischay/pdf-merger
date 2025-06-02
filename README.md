@@ -1,5 +1,3 @@
-# pdf-merger
-
 # PDF Merger
 
 A simple web application to merge multiple PDF files into one combined document. Built with React on the frontend and Express.js on the backend.
@@ -48,7 +46,7 @@ A simple web application to merge multiple PDF files into one combined document.
     npm install
 
 4. Setup environment variables:
-Create a .env file in the server folder with the following content (adjust as needed):
+    Create a .env file in the server folder with the following content (adjust as needed):
 
 PORT=5000
 UPLOAD_DIR=uploads
