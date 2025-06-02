@@ -1,55 +1,62 @@
 .merge-button {
-  padding: 0.9rem 2.2rem;
-  background-color: #2ecc71;
-  color: white;
+  padding: 0.9rem 2.5rem;
+  background-color: #4a90e2; /* soft blue */
+  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
+  box-shadow: 0 4px 14px rgba(74, 144, 226, 0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .merge-button:hover:not(:disabled) {
-  background-color: #27ae60;
+  background-color: #357ABD; /* deeper blue on hover */
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+  box-shadow: 0 8px 25px rgba(53, 122, 189, 0.5);
 }
 
 .merge-button:active:not(:disabled) {
   transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(74, 144, 226, 0.4);
 }
 
 .merge-button:disabled {
-  background-color: #95a5a6;
+  background-color: #b0b8c1; /* muted gray-blue */
   cursor: not-allowed;
   box-shadow: none;
+  color: #f0f3f7;
 }
 
 .merge-button.merging {
-  background-color: #f39c12;
-  padding-left: 3rem;
+  background-color: #f5a623; /* warm amber */
+  padding-left: 3.2rem;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.5);
 }
 
 .merge-button.merging::after {
   content: "";
   position: absolute;
-  left: 1.2rem;
+  left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 3px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   border-top-color: white;
   animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-  to { transform: translateY(-50%) rotate(360deg); }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
