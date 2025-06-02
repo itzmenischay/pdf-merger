@@ -1,0 +1,55 @@
+.merge-button {
+  padding: 0.9rem 2.2rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
+}
+
+.merge-button:hover:not(:disabled) {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+}
+
+.merge-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.merge-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.merge-button.merging {
+  background-color: #f39c12;
+  padding-left: 3rem;
+}
+
+.merge-button.merging::after {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
