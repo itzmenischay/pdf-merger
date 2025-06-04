@@ -5,3 +5,27 @@
   min-height: 100vh;
   width: 100%;
 }
+
+/* Mobile devices (≤ 600px) */
+@media (max-width: 600px) {
+  .background-container {
+    background-size: auto 100%; /* Fit height better on tall screens */
+    background-position: top;
+  }
+}
+
+/* Tablets (601px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .background-container {
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+/* Small desktops (901px to 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .background-container {
+    background-size: cover;
+    background-position: center;
+  }
+}

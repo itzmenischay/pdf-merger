@@ -60,3 +60,42 @@
     transform: translateY(-50%) rotate(360deg);
   }
 }
+
+/* Tablets and smaller desktops */
+@media (max-width: 900px) {
+  .merge-button {
+    max-width: 220px;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .merge-button.merging {
+    padding-left: 2.8rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .merge-button {
+    max-width: 180px;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .merge-button.merging {
+    padding-left: 2.4rem;
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 400px) {
+  .merge-button {
+    max-width: 150px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .merge-button.merging {
+    padding-left: 2rem;
+  }
+}

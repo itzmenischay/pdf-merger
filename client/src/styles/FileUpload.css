@@ -65,3 +65,59 @@
   color: #1c5980;
   outline: none;
 }
+
+/* Tablets and small desktops */
+@media (max-width: 900px) {
+  .file-upload {
+    max-width: 90%;
+    height: 140px;
+    padding: 1rem;
+  }
+
+  .file-upload label {
+    font-size: 1rem;
+  }
+
+  .browse-text {
+    margin-top: 0.8rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .file-upload {
+    height: 120px;
+    padding: 0.8rem;
+    border-width: 1.5px;
+  }
+
+  .file-upload label {
+    font-size: 0.9rem;
+  }
+
+  .browse-text {
+    margin-top: 0.6rem;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 400px) {
+  .file-upload {
+    height: 110px;
+    padding: 0.7rem;
+  }
+
+  .file-upload label {
+    font-size: 0.85rem;
+  }
+
+  .browse-text {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

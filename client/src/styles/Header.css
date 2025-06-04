@@ -18,6 +18,18 @@
   margin: 0;
 }
 
+/* Tablets and small desktops */
+@media (max-width: 1024px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
   .header h1 {
     font-size: 2rem;
@@ -25,5 +37,16 @@
   
   .header p {
     font-size: 1rem;
+  }
+}
+
+/* Small mobiles */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .header p {
+    font-size: 0.9rem;
   }
 }

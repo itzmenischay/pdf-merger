@@ -11,6 +11,11 @@ body {
   line-height: 1.6;
 }
 
+html, body{
+  overflow: hidden;
+  height: 100%;
+}
+
 .App {
   max-width: 1200px;
   margin: 0 auto;

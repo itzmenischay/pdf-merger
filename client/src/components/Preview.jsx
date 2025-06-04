@@ -7,7 +7,7 @@ const Preview = ({ mergedPdfUrl }) => {
   const closeModal = () => setShowModal(false);
 
   return (
-    <div className="preview-container">
+    <>
       <button 
         className="preview-button" 
         onClick={() => setShowModal(true)}
@@ -28,7 +28,7 @@ const Preview = ({ mergedPdfUrl }) => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
