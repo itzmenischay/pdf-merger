@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Background.css';
-import bgImage from '../assets/bg-img.jpg';
+import bgImage from '../assets/bg-img.webp';
 
 const Background = ({ children }) => {
   return (
