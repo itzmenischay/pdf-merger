@@ -160,14 +160,6 @@ app.post('/api/merge', (req, res, next) => {
   }
 });
 
-// Serve frontend if in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-  });
-}
-
 // Global error handler
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err);
